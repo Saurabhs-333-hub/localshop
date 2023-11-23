@@ -43,6 +43,6 @@ export async function POST(request: NextRequest) {
     })
 
     console.log(res)
-    return res
+    return res;
 
 }
