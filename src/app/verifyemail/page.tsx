@@ -36,7 +36,7 @@ const VerifyEmail = () => {
         if (token) {
             verifyEmail();
         }
-    }, [token]);
+    }, [verifyEmail, token]);
 
     return (
         <div className='w-screen h-screen flex flex-col justify-center items-center'>
