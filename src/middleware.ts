@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server'
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
     const path = request.nextUrl.pathname
-    const isPublicPath = path === '/login' || path === '/signup'|| path === '/verifyemail'
+    const isPublicPath = path === '/login' || path === '/signup' || path === '/verifyemail'
     const token = request.cookies.get('token')?.value || ""
     //? Check if the path is public and the user is logged in
     if (isPublicPath && token) {
