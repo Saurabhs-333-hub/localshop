@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
 
 
         const id = getDataFromToken(request)
-        const user = await User.findOne({ _id: id }).select('-password')
+        const user = await User.findOne(id).select('-password')
         return NextResponse.json({
             message: 'User found',
             user: user
