@@ -11,30 +11,33 @@ const VerifyEmail = () => {
 
     const verifyEmail = async () => {
         try {
-            setLoading(true)
-            const response = await axios.post('/api/userauth/verifyemail', { token })
-            setLoading(false)
-            setVerified(true)
-            console.log(response)
+            setLoading(true);
+            const response = await axios.post('/api/userauth/verifyemail', { token });
+            setLoading(false);
+            setVerified(true);
+            console.log(response);
         } catch (error: any) {
-            console.error(error)
-            setError(error.response.data.error)
+            console.error(error);
+            setError(error.response.data.error);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
-    }
+    };
+
     React.useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
-        const token = urlParams.get('token');
-        if (token) {
-            setToken(token)
+        const tokenFromUrl = urlParams.get('token');
+        if (tokenFromUrl) {
+            setToken(tokenFromUrl); // Use setToken to update the state
         }
-    }, [])
+    }, []);
+
     React.useEffect(() => {
         if (token) {
-            verifyEmail()
+            verifyEmail();
         }
-    }, [token])
+    }, [token]);
+
     return (
         <div className='w-screen h-screen flex flex-col justify-center items-center'>
             <div className='bg-gray-800 rounded-lg p-2 m-2 mx-28'>
