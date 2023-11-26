@@ -8,9 +8,7 @@ export async function GET() {
             success: true
         })
         // localStorage.setItem("token", "")
-        res.cookies.set("token", "", {
-            expires: new Date(0)
-        })
+        res.cookies.delete("token")
         console.log(res)
         return res;
     } catch (error) {
