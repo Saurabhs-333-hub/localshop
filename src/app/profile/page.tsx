@@ -9,8 +9,9 @@ const Profile = () => {
   const [data, setData] = React.useState("No data available!")
   const logout = async () => {
     try {
-      await axios.get('/api/userauth/logout')
+      const res = await axios.get('/api/userauth/logout')
       toast.success("Logout SuccessFull!")
+      console.log(res)
       router.push('/login')
     } catch (error) {
       toast.error(`${error}`)

@@ -7,9 +7,10 @@ export async function GET() {
             success: true
         })
 
-        res.cookies.set("token", "", {
+        await res.cookies.set("token", "", {
             httpOnly: true, expires: new Date(0)
         })
+        console.log(res)
         return res;
     } catch (error) {
         return NextResponse.json({
