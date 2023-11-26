@@ -7,8 +7,8 @@ export async function GET() {
             success: true
         })
 
-        await res.cookies.set("token", "", {
-            httpOnly: true, expires: new Date(0)
+        res.cookies.set("token", "", {
+            httpOnly: false, expires: new Date(0)
         })
         console.log(res)
         return res;
