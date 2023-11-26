@@ -20,7 +20,7 @@ const Profile = () => {
     try {
       const res = await axios.get('/api/userauth/me')
       console.log(res.data)
-      setData(JSON.stringify(res.data, null, 2))
+      setData(res.data.user._id)
     } catch (error) {
       toast.error(`${error}`)
     }
