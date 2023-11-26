@@ -24,11 +24,8 @@ const VerifyEmail = () => {
         }
     }
     React.useEffect(() => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const token = urlParams.get('token');
-        if (token) {
-            setToken(token)
-        }
+        const token = window.location.search.split("=")[1]
+        setToken(token)
     }, [])
     React.useEffect(() => {
         if (token.length > 0) {
