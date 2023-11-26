@@ -1,7 +1,6 @@
 import connect from "@/db/config";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
-import bcrypt from "bcryptjs";
 
 connect();
 

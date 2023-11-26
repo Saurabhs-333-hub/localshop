@@ -74,7 +74,7 @@ const LoginPage = () => {
                     Login
                 </button>}
                 <div className="flex justify-center my-2">
-                    <h4 className='text-gray-500 mx-2'>Don't have an Account?</h4><Link href="/signup">Sign Up</Link>
+                    <h4 className='text-gray-500 mx-2'>Don&apost have an Account?</h4><Link href="/signup">Sign Up</Link>
                 </div>
             </div>
             <Toaster

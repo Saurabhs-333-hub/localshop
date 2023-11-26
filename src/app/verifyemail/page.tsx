@@ -8,7 +8,6 @@ const VerifyEmail = () => {
     const [token, setToken] = React.useState('')
     const [verified, setVerified] = React.useState(false)
     const [error, setError] = React.useState('')
-    const [message, setMessage] = React.useState('')
 
     const verifyEmail = async () => {
         try {
@@ -16,7 +15,6 @@ const VerifyEmail = () => {
             const response = await axios.post('/api/userauth/verifyemail', { token })
             setLoading(false)
             setVerified(true)
-            setMessage(response.data.message)
             console.log(response)
         } catch (error: any) {
             console.error(error)
