@@ -24,11 +24,14 @@ const VerifyEmail = () => {
         }
     }
     React.useEffect(() => {
-        const token = window.location.search.split("=")[1]
-        setToken(token)
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        if (token) {
+            setToken(token)
+        }
     }, [])
     React.useEffect(() => {
-        if (token.length > 0) {
+        if (token) {
             verifyEmail()
         }
     }, [token])
