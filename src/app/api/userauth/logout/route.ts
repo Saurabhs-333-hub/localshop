@@ -14,7 +14,6 @@ export async function GET() {
         else {
             res.cookies.set("token", "", {
                 secure: process.env.NODE_ENV === "production", // Set to true in production if using HTTPS
-                sameSite: "strict",
             })
             console.log(`res${res.cookies.getAll().forEach((cookie) => {
                 console.log(cookie)
