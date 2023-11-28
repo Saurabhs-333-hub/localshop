@@ -12,7 +12,10 @@ export async function GET() {
             console.log("null")
         }
         else {
-            res.cookies.delete("token")
+            res.cookies.set("token", "", {
+                secure: process.env.NODE_ENV === "production", // Set to true in production if using HTTPS
+                sameSite: "strict",
+            })
             console.log(`res${res.cookies.getAll().forEach((cookie) => {
                 console.log(cookie)
             })}`)
