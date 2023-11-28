@@ -13,6 +13,7 @@ export async function GET() {
         }
         else {
             res.cookies.set("token", "", {
+                path: "/",
                 secure: process.env.NODE_ENV === "production", // Set to true in production if using HTTPS
             })
             console.log(`res${res.cookies.getAll().forEach((cookie) => {
